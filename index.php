@@ -1,6 +1,15 @@
 <?php
 include "koneksi.php";
 
+if(isset($_POST['submit'])){
+    $nama = htmlspecialchars($_POST['namalengkap']);
+    $nis = htmlspecialchars($_POST['nis']);
+    $kelas = htmlspecialchars($_POST['kelas']);
+    $kelamin = htmlspecialchars($_POST['flexRadioDefault']);
+    $telp = htmlspecialchars($_POST['telp']);
+    $email = htmlspecialchars($_POST['email']);
+}
+
 ?>
 
 <!doctype html>
@@ -10,8 +19,7 @@ include "koneksi.php";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Crud PHP Native</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/
-    HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -19,6 +27,9 @@ include "koneksi.php";
     <style>
         .input input {
             margin-bottom: 10px;
+        }
+        .input input:focus{
+            box-shadow: none;
         }
     </style>
     <div class="container-fluid mt-5">
@@ -44,12 +55,12 @@ include "koneksi.php";
                                     <label for="">Jenis Kelamin :</label>
                                     <div class="form-check">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1" required>
                                             Laki Laki
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" required >
                                         <label class="form-check-label" for="flexRadioDefault2">
                                             Perempuan
                                         </label>
