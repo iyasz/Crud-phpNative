@@ -1,4 +1,5 @@
 <?php
+include "koneksi.php";
 
 ?>
 
@@ -8,8 +9,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Crud PHP Native</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/
+    HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -99,8 +102,8 @@
                                     <td></td>
                                     <td></td>
                                     <td class="text-center">
-                                        <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                        <a href="" class="btn btn-danger btn-sm">Hapus</a>
+                                        <a href="" class="btn btn-primary btn-sm"><i class='bx bx-edit-alt' ></i></a>
+                                        <a href="" class="btn btn-danger btn-sm"><i class='bx bx-trash' ></i></a>
                                     </td>
                                 </tr>
                             </tbody>
