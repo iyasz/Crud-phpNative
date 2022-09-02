@@ -13,39 +13,98 @@
 </head>
 
 <body>
-    <div class="container mt-5">
+    <style>
+        .input input {
+            margin-bottom: 10px;
+        }
+    </style>
+    <div class="container-fluid mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-9">
                 <div class="card shadow-lg">
                     <div class="card-body">
                         <form action="" method="post">
-                            <div class="header">
-                                <h1>Formulir Pendaftaran</h1>
+                            <div class="header mb-4">
+                                <h3>Formulir Pendaftaran</h3>
                             </div>
                             <div class="input">
                                 <label for="">Nama Lengkap</label>
-                                <input type="text" class="form-control" name="namalengkap">
+                                <input type="text" autocomplete="off" placeholder="Nama Lengkap Siswa" required class="form-control" name="namalengkap">
     
                                 <label for="">Nomor Induk Siswa</label>
-                                <input type="text" class="form-control" name="namalengkap">
+                                <input autocomplete="off" placeholder="Nomor Induk Siswa" required type="text" class="form-control" name="nis">
     
-                                <label for="">Nama Lengkap</label>
-                                <input type="text" class="form-control" name="namalengkap">
-    
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                        Laki Laki
-                                    </label>
+                                <label for="">Kelas</label>
+                                <input autocomplete="off" placeholder="Kelas Siswa" required type="text" class="form-control" name="kelas">
+
+                                <div class="form-radio mb-3">
+                                    <label for="">Jenis Kelamin :</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                            Laki Laki
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                        <label class="form-check-label" for="flexRadioDefault2">
+                                            Perempuan
+                                        </label>
+                                    </div>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                    <label class="form-check-label" for="flexRadioDefault2">
-                                        Perempuan
-                                    </label>
-                                </div>
+
+                                <label for="">No Telepon</label>
+                                <input autocomplete="off" placeholder="No Telpon Siswa" required type="number" class="form-control" name="telp">
+
+                                <label for="">Email</label>
+                                <input autocomplete="off" placeholder="Email Siswa" required type="text" class="form-control" name="email">
+
+                            </div>
+                            <div class="footer mt-4">
+                                <button class="btn btn-primary" name="submit" type="submit">Submit</button>
+                                <button class="btn btn-danger" type="reset">Reset</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-12">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <div class="header ps-4">
+                            <h3>List Pendaftar</h3>
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Nama Lengkap</th>
+                                    <th>NIS</th>
+                                    <th>Kelas</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>No Telp</th>
+                                    <th>Email</th>
+                                    <th class="text-center">Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="text-center">
+                                        <a href="" class="btn btn-primary btn-sm">Edit</a>
+                                        <a href="" class="btn btn-danger btn-sm">Hapus</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
