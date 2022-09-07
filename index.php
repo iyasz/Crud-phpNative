@@ -110,19 +110,21 @@ if(isset($_POST['submit'])){
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $no = 1; foreach($data as $datas) { ?>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td> <?= $no++  ?> </td>
+                                    <td> <?= $datas['nama'] ?> </td>
+                                    <td> <?= $datas['nis'] ?> </td>
+                                    <td> <?= $datas['kelas'] ?> </td>
+                                    <td> <?= $datas['jk'] ?> </td>
+                                    <td> <?= $datas['telp'] ?> </td>
+                                    <td> <?= $datas['email'] ?></td>
                                     <td class="text-center">
                                         <a href="" class="btn btn-primary btn-sm"><i class='bx bx-edit-alt' ></i></a>
                                         <a href="" class="btn btn-danger btn-sm"><i class='bx bx-trash' ></i></a>
                                     </td>
                                 </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
