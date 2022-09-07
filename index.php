@@ -12,7 +12,9 @@ if(isset($_POST['submit'])){
     $email = htmlspecialchars($_POST['email']);
 
     mysqli_query($conn, "INSERT INTO tbl_siswa (`nama`,`nis`,`kelas`,`jk`,`telp`,`email`) VALUES ('$nama', '$nis', '$kelas', '$kelamin', '$telp', '$email')");
+    echo '<script>location.replace("")</script>';
 
+}else{
 
 }
 
@@ -52,7 +54,7 @@ if(isset($_POST['submit'])){
                                 <input type="text" autocomplete="off" placeholder="Nama Lengkap Siswa" required class="form-control" name="namalengkap">
     
                                 <label for="">Nomor Induk Siswa</label>
-                                <input autocomplete="off" placeholder="Nomor Induk Siswa" required type="text" class="form-control" name="nis">
+                                <input autocomplete="off" placeholder="Nomor Induk Siswa" required type="number" class="form-control" name="nis">
     
                                 <label for="">Kelas</label>
                                 <input autocomplete="off" placeholder="Kelas Siswa" required type="text" class="form-control" name="kelas">
@@ -121,6 +123,7 @@ if(isset($_POST['submit'])){
                                     <td> <?= $datas['email'] ?></td>
                                     <td class="text-center">
                                         <a href="" class="btn btn-primary btn-sm"><i class='bx bx-edit-alt' ></i></a>
+                                        <!-- <form action="" method="post"></form> -->
                                         <a href="" class="btn btn-danger btn-sm"><i class='bx bx-trash' ></i></a>
                                     </td>
                                 </tr>
