@@ -3,7 +3,7 @@ include "koneksi.php";
 
 $data = $conn->query("SELECT * FROM tbl_siswa");
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
     $nama = htmlspecialchars($_POST['namalengkap']);
     $nis = htmlspecialchars($_POST['nis']);
     $kelas = htmlspecialchars($_POST['kelas']);
@@ -13,9 +13,13 @@ if(isset($_POST['submit'])){
 
     mysqli_query($conn, "INSERT INTO tbl_siswa (`nama`,`nis`,`kelas`,`jk`,`telp`,`email`) VALUES ('$nama', '$nis', '$kelas', '$kelamin', '$telp', '$email')");
     echo '<script>location.replace("")</script>';
-
-}else{
-
+}
+if (isset($_POST['delete'])) {
+    $id = htmlspecialchars($_POST['id']);
+    $delete = $conn->query("DELETE FROM tbl_siswa WHERE id = '$id'");
+    if ($delete) {
+        echo '<script>location.replace("")</script>';
+    }
 }
 
 ?>
@@ -36,7 +40,8 @@ if(isset($_POST['submit'])){
         .input input {
             margin-bottom: 10px;
         }
-        .input input:focus{
+
+        .input input:focus {
             box-shadow: none;
         }
     </style>
@@ -52,10 +57,10 @@ if(isset($_POST['submit'])){
                             <div class="input">
                                 <label for="">Nama Lengkap</label>
                                 <input type="text" autocomplete="off" placeholder="Nama Lengkap Siswa" required class="form-control" name="namalengkap">
-    
+
                                 <label for="">Nomor Induk Siswa</label>
                                 <input autocomplete="off" placeholder="Nomor Induk Siswa" required type="number" class="form-control" name="nis">
-    
+
                                 <label for="">Kelas</label>
                                 <input autocomplete="off" placeholder="Kelas Siswa" required type="text" class="form-control" name="kelas">
 
@@ -68,7 +73,7 @@ if(isset($_POST['submit'])){
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Perempuan" required >
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="Perempuan" required>
                                         <label class="form-check-label" for="flexRadioDefault2">
                                             Perempuan
                                         </label>
@@ -112,23 +117,24 @@ if(isset($_POST['submit'])){
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $no = 1; foreach($data as $datas) { ?>
-                                <tr>
-                                    <td> <?= $no++  ?> </td>
-                                    <td> <?= $datas['nama'] ?> </td>
-                                    <td> <?= $datas['nis'] ?> </td>
-                                    <td> <?= $datas['kelas'] ?> </td>
-                                    <td> <?= $datas['jk'] ?> </td>
-                                    <td> <?= $datas['telp'] ?> </td>
-                                    <td> <?= $datas['email'] ?></td>
-                                    <td class="text-center d-flex gap-1 justify-content-center">
-                                        <a href="" class="btn btn-primary btn-sm"><i class='bx bx-edit-alt' ></i></a>
-                                        <form action="" method="post">
-                                            <input type="hidden" name="id" value="<?= $datas['id'] ?> ">
-                                            <button class="btn btn-sm btn-danger"><i class='bx bx-trash' ></i></button>
-                                        </form>
-                                    </td>
-                                </tr>
+                                <?php $no = 1;
+                                foreach ($data as $datas) { ?>
+                                    <tr>
+                                        <td> <?= $no++  ?> </td>
+                                        <td> <?= $datas['nama'] ?> </td>
+                                        <td> <?= $datas['nis'] ?> </td>
+                                        <td> <?= $datas['kelas'] ?> </td>
+                                        <td> <?= $datas['jk'] ?> </td>
+                                        <td> <?= $datas['telp'] ?> </td>
+                                        <td> <?= $datas['email'] ?></td>
+                                        <td class="text-center d-flex gap-1 justify-content-center">
+                                            <a href="" class="btn btn-primary btn-sm"><i class='bx bx-edit-alt'></i></a>
+                                            <form action="" method="post">
+                                                <input type="hidden" name="id" value="<?= $datas['id'] ?> ">
+                                                <button name="delete" type="submit" class="btn btn-sm btn-danger"><i class='bx bx-trash'></i></button>
+                                            </form>
+                                        </td>
+                                    </tr>
                                 <?php } ?>
                             </tbody>
                         </table>
