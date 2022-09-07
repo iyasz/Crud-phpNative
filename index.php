@@ -121,10 +121,12 @@ if(isset($_POST['submit'])){
                                     <td> <?= $datas['jk'] ?> </td>
                                     <td> <?= $datas['telp'] ?> </td>
                                     <td> <?= $datas['email'] ?></td>
-                                    <td class="text-center">
+                                    <td class="text-center d-flex gap-1 justify-content-center">
                                         <a href="" class="btn btn-primary btn-sm"><i class='bx bx-edit-alt' ></i></a>
-                                        <!-- <form action="" method="post"></form> -->
-                                        <a href="" class="btn btn-danger btn-sm"><i class='bx bx-trash' ></i></a>
+                                        <form action="" method="post">
+                                            <input type="hidden" name="id" value="<?= $datas['id'] ?> ">
+                                            <button class="btn btn-sm btn-danger"><i class='bx bx-trash' ></i></button>
+                                        </form>
                                     </td>
                                 </tr>
                                 <?php } ?>
