@@ -47,7 +47,7 @@ if (isset($_POST['delete'])) {
     </style>
     <div class="container-fluid mt-5">
         <div class="row justify-content-center">
-            <div class="col-lg-9">
+            <div class="col-lg-7">
                 <div class="card shadow-lg">
                     <div class="card-body">
                         <form action="" method="post">
