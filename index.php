@@ -1,6 +1,8 @@
 <?php
 include "koneksi.php";
 
+$data = $conn->query("SELECT * FROM tbl_siswa");
+
 if(isset($_POST['submit'])){
     $nama = htmlspecialchars($_POST['namalengkap']);
     $nis = htmlspecialchars($_POST['nis']);
@@ -10,6 +12,7 @@ if(isset($_POST['submit'])){
     $email = htmlspecialchars($_POST['email']);
 
     mysqli_query($conn, "INSERT INTO tbl_siswa (`nama`,`nis`,`kelas`,`jk`,`telp`,`email`) VALUES ('$nama', '$nis', '$kelas', '$kelamin', '$telp', '$email')");
+
 
 }
 
