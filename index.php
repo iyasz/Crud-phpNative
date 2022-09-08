@@ -128,7 +128,7 @@ if (isset($_POST['delete'])) {
                                         <td> <?= $datas['telp'] ?> </td>
                                         <td> <?= $datas['email'] ?></td>
                                         <td class="text-center d-flex gap-1 justify-content-center">
-                                            <a href="" class="btn btn-primary btn-sm"><i class='bx bx-edit-alt'></i></a>
+                                            <a href="edit.php?id=<?= $datas['id'] ?>" class="btn btn-primary btn-sm"><i class='bx bx-edit-alt'></i></a>
                                             <form action="" method="post">
                                                 <input type="hidden" name="id" value="<?= $datas['id'] ?> ">
                                                 <button name="delete" type="submit" class="btn btn-sm btn-danger"><i class='bx bx-trash'></i></button>
